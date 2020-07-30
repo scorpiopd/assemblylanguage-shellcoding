@@ -1,0 +1,30 @@
+http://shell-storm.org/shellcode/
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1]install nasm=sudo apt-get install nasm build-essential
+2]creating file =pico demo.nasm
+nasm-hf
+3]creating an object file =nasm -f elf64 demo.nasm -o demo.o
+
+ls -l demo*
+
+4]will create a bindshell and will listen on port 4444=ld demo.o -o demo
+
+5] to check connection to if its actually listening open another terminal 
+6]sudo apt-get install ncat
+7]netstat -nlt
+8]nc localhost 4444
+9]pwd,whoami,
+10]because assembly language format can be intel or At&t =objdump -D -M intel demo.o
+
+RELATED INFORMAION 
+what objectdump does is looks into object picks up the diffrent sections and then goes ahead and disassembles them thats what -D stands for 
+
+to check cpu supports 64 bit mode=lscpu
+figuring out different things about cpu =cat/proc/cpuinfo 
+
+flags talk about capability of processor 
+GDB=defacto tool for debugging programs on linux based systems
